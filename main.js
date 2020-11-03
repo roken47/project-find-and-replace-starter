@@ -27,11 +27,17 @@ replaceAllButton.addEventListener("click", function () {
     // loop over each row to find user's input --> maybe .include()
     // nest the loops to also go over each cell
     let currentRowsCells = getCellElements(rowElements[i]);
-    console.log(currentRowsCells);
+    // console.log("ROW: " + currentRowsCells);
     for (let j = 0; j < currentRowsCells.length; j++) {
-      // console.log(currentRowsCells[j]);
-      // if (currentRowsCells.includes(userFindInput)) {
-      //   currentSearch.innerHTML.replace(userFindInput, userReplaceInput);
+      // console.log("CELLS: " + currentRowsCells[j]);
+      //TODO includes(valueToFind, [optional]fromIndex)
+      //TODO replace(oldText/regEx, newText/pattern)
+      //! Can't use currentRowsCells because it is tied to function: returns error. Hint:tictactoe project ---> Byron suggests reserved wprd 'this'
+      // if (arr.includes(currentRowsCells[j])) {
+      //   let replacement = currentRowsCells[j].innerHTML;
+      //   replacement.replace(userFindInput, userReplaceInput);
+      //   currentRowsCells[j].innerHTML = replacement;
+      //   console.log(replacement);
       // }
     }
   }
