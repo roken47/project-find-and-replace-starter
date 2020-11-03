@@ -9,7 +9,8 @@ const replaceAllButton = document.querySelector(".replace-all-button");
 // Later you will need an OUTER LOOP to loop over the individual elements within
 // this array.
 const rowElements = document.querySelectorAll(".row");
-
+// var rowArray = Array.from(rowElements);
+// console.log(rowArray[0]);
 // When you call the function below, it will get and return an INNER ARRAY
 // containing the cell elements for a given row.
 // Call this function from WITHIN your row elements loop. Then you will, in turn,
@@ -19,47 +20,43 @@ function getCellElements(currentRowElement) {
   return currentRowElement.querySelectorAll(".cell");
 }
 
-// YOUR CODE GOES HERE
 replaceAllButton.addEventListener("click", function () {
-  //TODO get the value from the inputs
   let userFindInput = findInput.value;
   let userReplaceInput = replaceInput.value;
-  for (let i = 0, currentRow = rowElements.length; i < currentRow; i++) {
+  for (let i = 0; i < rowElements.length; i++) {
     // loop over each row to find user's input --> maybe .include()
     // nest the loops to also go over each cell
-
-    console.log(currentRow[i]);
-    for (let j = 0, currentCell = currentRow[i]; j < currentCell; j++) {
-      //! need to understand how above function will return currentCell
-      //loop over current row to search each cell of current row to see if it includes(userFindInput) then replace(userReplaceInput)
-      getCellElements(rowElements[i][j]);
-      console.log(currentCell[j]);
+    let currentRowsCells = getCellElements(rowElements[i]);
+    console.log(currentRowsCells);
+    for (let j = 0; j < currentRowsCells.length; j++) {
+      // console.log(currentRowsCells[j]);
+      // if (currentRowsCells.includes(userFindInput)) {
+      //   currentSearch.innerHTML.replace(userFindInput, userReplaceInput);
+      // }
     }
-    // if(rowElements.includes(userFindInput)) {
-    //     let currentRow = rowElements[i];
-
-    // }
   }
-  //TODO loop over rowElements
-  //TODO currentSomething = getCellElements(somethings[i])
-  //TODO loop currentSomething
-  //? includes() method
-  //? replace() method
 });
-// /*! //! outer loop applies to outer array
-let ar = [
-  ["test1", 2, "test2", 3],
-  [8, 4, 6, 7],
-  ["dude", "what's", "mine", "say"],
-];
+//loop over current row to search each cell of current row to see if it includes(userFindInput) then replace(userReplaceInput)
+//TODO loop over rowElements
+//TODO currentSomething = getCellElements(somethings[i])
+//TODO loop currentSomething
+//? includes() method
+//? replace() method
 
-for (var i = 0, len = ar.length; i < len; i++) {
-  //! inner loop applies to sub-arrays
-  for (var j = 0, len2 = ar[i].length; j < len2; j++) {
-    //! accesses each element of each sub-array in turn
-    console.log(ar[i][j]);
-  }
-}
+// /*! //! outer loop applies to outer array
+// let ar = [
+//   ["test1", 2, "test2", 3],
+//   [8, 4, 6, 7],
+//   ["dude", "what's", "mine", "say"],
+// ];
+
+// for (var i = 0, len = ar.length; i < len; i++) {
+//   //! inner loop applies to sub-arrays
+//   for (var j = 0, len2 = ar[i].length; j < len2; j++) {
+//     //! accesses each element of each sub-array in turn
+//     // console.log(ar[i][j]);
+//   }
+// }
 
 // One last thing: dedicate very careful attention to using variables and
 // naming them accurately.
