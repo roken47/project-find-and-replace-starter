@@ -1,4 +1,5 @@
 const findInput = document.querySelector(".find-input");
+findInput.focus(onload);
 const replaceInput = document.querySelector(".replace-input");
 const replaceAllButton = document.querySelector(".replace-all-button");
 
