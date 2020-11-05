@@ -7,6 +7,9 @@ const rowElements = document.querySelectorAll(".row");
 function getCellElements(currentRowElement) {
   return currentRowElement.querySelectorAll(".cell");
 }
+function resetInputs() {
+  return (findInput.value = ""), (replaceInput.value = ""), findInput.focus();
+}
 
 replaceAllButton.addEventListener("click", function () {
   let userFindInput = findInput.value;
@@ -21,4 +24,5 @@ replaceAllButton.addEventListener("click", function () {
       }
     }
   }
+  resetInputs();
 });
